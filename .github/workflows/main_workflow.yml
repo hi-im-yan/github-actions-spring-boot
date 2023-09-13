@@ -15,3 +15,8 @@ jobs:
     needs: test_workflow
     uses: ./.github/workflows/artifact_workflow.yml
     secrets: inherit
+
+  docker_workflow:
+    needs: artifact_workflow
+    uses: ./.github/workflows/docker_workflow.yml
+    secrets: inherit
