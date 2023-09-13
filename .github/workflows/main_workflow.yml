@@ -26,7 +26,4 @@ jobs:
   docker_workflow:
     needs: artifact_workflow
     uses: ./.github/workflows/docker_workflow.yml
-    secrets:
-      DOCKER_HUB_USERNAME: ${{secrets.DOCKER_HUB_USERNAME}}
-      DOCKER_HUB_PASSWORD: ${{secrets.DOCKER_HUB_PASSWORD}}
-      DOCKER_HUB_REPOSITORY: ${{secrets.DOCKER_HUB_REPOSITORY}}
+    secrets: inherit
