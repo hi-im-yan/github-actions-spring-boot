@@ -13,7 +13,7 @@ class GithubActionsApplicationTests {
 	@DisplayName("Test just to show on log")
 	void contextLoads() {
 
-		assertTrue(true);
+		assertTrue(false);
 	}
 
 }
