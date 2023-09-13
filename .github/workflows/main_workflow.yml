@@ -7,12 +7,6 @@ on:
     branches: [ 'main', 'develop']
 
 jobs:
-  secrets:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: print secret
-        run: echo "docker-hub-username -> ${{secrets.DOCKER_HUB_USERNAME}}"
 
   test_workflow:
     uses: ./.github/workflows/test_workflow.yml
