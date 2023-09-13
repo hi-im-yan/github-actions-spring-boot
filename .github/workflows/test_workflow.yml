@@ -5,7 +5,7 @@ on:
 
 jobs:
 
-  test:
+  testing_application:
     runs-on: ubuntu-latest
 
     steps:

@@ -4,7 +4,7 @@ on:
   workflow_call:
 
 jobs:
-  build:
+  building_artifact:
     runs-on: ubuntu-latest
 
     steps:
