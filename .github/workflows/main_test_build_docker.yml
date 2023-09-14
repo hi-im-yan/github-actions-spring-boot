@@ -10,15 +10,15 @@ on:
 jobs:
 
   test_workflow:
-    uses: ./.github/workflows/subworkflows/test_workflow.yml
+    uses: ./.github/workflows/sub_test_workflow.yml
     secrets: inherit
 
   artifact_workflow:
     needs: test_workflow
-    uses: ./.github/workflows/subworkflows/artifact_workflow.yml
+    uses: ./.github/workflows/sub_artifact_workflow.yml
     secrets: inherit
 
   docker_workflow:
     needs: artifact_workflow
-    uses: ./.github/workflows/subworkflows/docker_workflow.yml
+    uses: ./.github/workflows/sub_docker_workflow.yml
     secrets: inherit
