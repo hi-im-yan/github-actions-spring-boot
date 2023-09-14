@@ -11,5 +11,5 @@ jobs:
 
       - name: print some variables
         run: |
-          echo "env name -> ${{env.ENVIRONMENT_NAME}}"
-          echo "env secret -> ${{env.ENVIRONMENT_SECRET}}"
+          echo "env name -> ${{vars.ENVIRONMENT_NAME}}"
+          echo "env secret -> ${{vars.ENVIRONMENT_SECRET}}"
