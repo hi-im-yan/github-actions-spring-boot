@@ -1,4 +1,4 @@
-name: TEST & PACKAGE & DOCKER
+name: test spring boot
 
 on:
   workflow_call:
