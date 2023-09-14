@@ -21,3 +21,8 @@ jobs:
     needs: artifact_workflow
     uses: ./.github/workflows/docker_workflow.yml
     secrets: inherit
+
+  deploy_render:
+    needs: docker_workflow
+    uses: ./.github/workflows/render_deploy_workflow.yml
+    secrets: inherit
