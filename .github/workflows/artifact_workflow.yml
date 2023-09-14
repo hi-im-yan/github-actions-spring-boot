@@ -26,5 +26,7 @@ jobs:
         with:
           name: github-actions-${{ github.run_number }}
 #          path: target/github-actions-*.jar
-          path: .
+          path: |
+            .
+            !.git/
 
