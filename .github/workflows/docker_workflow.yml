@@ -29,22 +29,22 @@ jobs:
           # Password or personal access token used to log against the Docker registry
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
-      - name: Build and push Docker image
-        run: |
-          docker build -t github-actions . &&
-          docker tag github-actions ${{ secrets.DOCKER_HUB_REPOSITORY }}/github-actions:${{ github.sha }} && 
-          docker push ${{ secrets.DOCKER_HUB_REPOSITORY }}/github-actions:${{ github.sha }}
+#      - name: Build and push Docker image
+#        run: |
+#          docker build -t github-actions . &&
+#          docker tag github-actions ${{ secrets.DOCKER_HUB_REPOSITORY }}/github-actions:${{ github.sha }} &&
+#          docker push ${{ secrets.DOCKER_HUB_REPOSITORY }}/github-actions:${{ github.sha }}
 
-#      - name: Build and push Docker images
-#        # You may pin to the exact commit or the version.
-#        # uses: docker/build-push-action@e551b19e49efd4e98792db7592c17c09b89db8d8
-#        uses: docker/build-push-action@v3.0.0
-#        with:
-#          # Build's context is the set of files located in the specified PATH or URL
-#          context: .
-#          # Path to the Dockerfile
-#          file: ./Dockerfile
-#          # Push is a shorthand for --output=type=registry
-#          push: true
-#          # List of tags
-#          tags: ${{ secrets.DOCKER_HUB_REPOSITORY }}/github-actions:${{github.run_number}}
+      - name: Build and push Docker images
+        # You may pin to the exact commit or the version.
+        # uses: docker/build-push-action@e551b19e49efd4e98792db7592c17c09b89db8d8
+        uses: docker/build-push-action@v3.0.0
+        with:
+          # Build's context is the set of files located in the specified PATH or URL
+          context: .
+          # Path to the Dockerfile
+          file: ./Dockerfile
+          # Push is a shorthand for --output=type=registry
+          push: true
+          # List of tags
+          tags: ${{ secrets.DOCKER_HUB_REPOSITORY }}/github-actions:${{github.run_number}}
