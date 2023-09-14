@@ -8,6 +8,18 @@ on:
 
 jobs:
 
+  print_variables:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: hummmmm
+        uses: actions/checkout@v3
+
+      - name: print some variables
+        run: |
+          echo "env name -> ${{vars.ENVIRONMENT_NAME}}"
+          echo "env secret -> ${{vars.ENVIRONMENT_SECRET}}"
+
   variables_workflow:
     uses: ./.github/workflows/variables_workflow.yml
     secrets: inherit
