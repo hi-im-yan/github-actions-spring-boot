@@ -24,4 +24,9 @@ public class Controller {
     public String feature2() {
         return "I'm a feature2. I'm on the environment: " + whatEnvIsThis;
     }
+
+    @GetMapping("/feature3")
+    public String feature3() {
+        return "I'm a feature3. I'm on the environment: " + whatEnvIsThis;
+    }
 }
