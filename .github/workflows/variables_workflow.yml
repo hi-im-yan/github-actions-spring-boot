@@ -1,0 +1,15 @@
+on:
+  workflow_call:
+
+jobs:
+  building_artifact:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: hummmmm
+        uses: actions/checkout@v3
+
+      - name: print some variables
+        run: |
+          echo "env name -> ${{secrets.ENVIRONMENT_NAME}}"
+          echo "env secret -> ${{secrets.ENVIRONMENT_SECRET}}"

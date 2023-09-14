@@ -8,16 +8,20 @@ on:
 
 jobs:
 
-  test_workflow:
-    uses: ./.github/workflows/test_workflow.yml
+  variables_workflow:
+    uses: ./.github/workflows/variables_workflow.yml
     secrets: inherit
 
-  artifact_workflow:
-    needs: test_workflow
-    uses: ./.github/workflows/artifact_workflow.yml
-    secrets: inherit
-
-  docker_workflow:
-    needs: artifact_workflow
-    uses: ./.github/workflows/docker_workflow.yml
-    secrets: inherit
+#  test_workflow:
+#    uses: ./.github/workflows/test_workflow.yml
+#    secrets: inherit
+#
+#  artifact_workflow:
+#    needs: test_workflow
+#    uses: ./.github/workflows/artifact_workflow.yml
+#    secrets: inherit
+#
+#  docker_workflow:
+#    needs: artifact_workflow
+#    uses: ./.github/workflows/docker_workflow.yml
+#    secrets: inherit
