@@ -25,4 +25,4 @@ jobs:
         uses: actions/upload-artifact@v3.1.0
         with:
           name: github-actions-jar
-          path: target/github-actions-0.0.1-SNAPSHOT.jar
+          path: .
