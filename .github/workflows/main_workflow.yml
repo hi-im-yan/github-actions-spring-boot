@@ -8,32 +8,32 @@ on:
 
 jobs:
 
-  print_variables:
-    runs-on: ubuntu-latest
+#  print_variables:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: hummmmm
+#        uses: actions/checkout@v3
+#
+#      - name: print some variables
+#        run: |
+#          echo "env name -> ${{vars.ENVIRONMENT_NAME}}"
+#          echo "env secret -> ${{vars.ENVIRONMENT_SECRET}}"
+#
+#  variables_workflow:
+#    uses: ./.github/workflows/variables_workflow.yml
+#    secrets: inherit
 
-    steps:
-      - name: hummmmm
-        uses: actions/checkout@v3
-
-      - name: print some variables
-        run: |
-          echo "env name -> ${{vars.ENVIRONMENT_NAME}}"
-          echo "env secret -> ${{vars.ENVIRONMENT_SECRET}}"
-
-  variables_workflow:
-    uses: ./.github/workflows/variables_workflow.yml
+  test_workflow:
+    uses: ./.github/workflows/test_workflow.yml
     secrets: inherit
 
-#  test_workflow:
-#    uses: ./.github/workflows/test_workflow.yml
-#    secrets: inherit
-#
-#  artifact_workflow:
-#    needs: test_workflow
-#    uses: ./.github/workflows/artifact_workflow.yml
-#    secrets: inherit
-#
-#  docker_workflow:
-#    needs: artifact_workflow
-#    uses: ./.github/workflows/docker_workflow.yml
-#    secrets: inherit
+  artifact_workflow:
+    needs: test_workflow
+    uses: ./.github/workflows/artifact_workflow.yml
+    secrets: inherit
+
+  docker_workflow:
+    needs: artifact_workflow
+    uses: ./.github/workflows/docker_workflow.yml
+    secrets: inherit
