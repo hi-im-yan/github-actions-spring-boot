@@ -1,7 +1,9 @@
 FROM openjdk:17-jdk-slim
 
-#WORKDIR /app
+RUN #mkdir /app
 
-#COPY target/github-actions-0.0.1-SNAPSHOT.jar /app/app.jar
+WORKDIR /app
+COPY target/github-actions-*.jar /app/app.jar
 
-CMD ["java", "-jar", "target/github-actions-*.jar"]
+
+CMD ["java", "-jar", "app.jar"]
