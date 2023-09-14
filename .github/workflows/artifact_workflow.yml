@@ -25,4 +25,6 @@ jobs:
         uses: actions/upload-artifact@v3.1.0
         with:
           name: github-actions-${{ github.run_number }}
-          path: target/github-actions-*.jar
+#          path: target/github-actions-*.jar
+          path: .
+
