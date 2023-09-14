@@ -14,4 +14,9 @@ public class Controller {
     public String healthCheck() {
         return "I'm healthy. I'm on the environment: " + whatEnvIsThis;
     }
+
+    @GetMapping("/new-feature")
+    public String newFeature() {
+        return "I'm a new feature. I'm on the environment: " + whatEnvIsThis;
+    }
 }
