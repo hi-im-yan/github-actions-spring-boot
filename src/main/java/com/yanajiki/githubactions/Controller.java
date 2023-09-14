@@ -15,8 +15,13 @@ public class Controller {
         return "I'm healthy. I'm on the environment: " + whatEnvIsThis;
     }
 
-    @GetMapping("/new-feature")
-    public String newFeature() {
+    @GetMapping("/feature1")
+    public String feature1() {
         return "I'm a new feature. I'm on the environment: " + whatEnvIsThis;
+    }
+
+    @GetMapping("/feature2")
+    public String feature2() {
+        return "I'm a feature2. I'm on the environment: " + whatEnvIsThis;
     }
 }

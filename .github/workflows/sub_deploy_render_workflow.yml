@@ -1,3 +1,5 @@
+name: Deploy on Render.com
+
 on:
   workflow_call:
 
