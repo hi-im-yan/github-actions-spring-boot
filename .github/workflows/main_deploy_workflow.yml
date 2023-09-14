@@ -8,5 +8,5 @@ on:
 jobs:
 
   deploy_on_render:
-    uses: ./.github/workflows/sub_deploy_render.yml
+    uses: ./.github/workflows/sub_deploy_render_workflow.yml
     secrets: inherit
